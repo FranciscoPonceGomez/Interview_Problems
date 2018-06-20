@@ -13,6 +13,12 @@ class Solution:
             max_ending_here = max(x, max_ending_here + x)
             max_so_far = max(max_so_far, max_ending_here)
         return max_so_far
+    
+    def maxSubArrayShort(self, nums):
+        for i in range(1, len(nums)):
+            if nums[i-1] > 0:
+                nums[i] += nums[i-1]
+        return max(nums)
 
 test = Solution()
 print(test.maxSubArray([1,-233,79,46,85,-112,200]))
