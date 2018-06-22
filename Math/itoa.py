@@ -3,7 +3,6 @@ def itoa(value, base):
     while value > 0:
         res.append(toString(value % base))
         value = value // base
-    #res[i] = '\0'
     return ''.join(reverse(res))
 
 def toString(value):
