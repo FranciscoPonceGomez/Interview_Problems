@@ -42,7 +42,7 @@ def toString(value):
     else:
         return chr(ord('A') - 10 + value)
 
-# Since we cannot use built in functions, one of the best ways to reverse arrays is by using two indexes
+# Since we are trying to limit the use of built-in functions, one of the best ways to reverse arrays is by using two indexes
 # ---Time Complexity---: O(n/2) ~= O(n), n = number of digits in the input 
 # This method doesn't increase the total complexity if itoa since O(2n) ~= O(n)
 # ---Space Complexity---: O(1)
