@@ -1,7 +1,7 @@
 import java.lang.*;
 
 class Solution {
-    public static String spiralOrder(int[][] matrix) {
+    public static String clockWise(int[][] matrix) {
         int t = 0;
         int b = matrix.length-1;
         int l = 0;
@@ -59,6 +59,6 @@ class Solution {
                       {5,  7,  9, 12},
                       {1, 0, 6, 10}
                     };
-        System.out.print(spiralOrder(matrix));
+        System.out.print(clockWise(matrix));
     }
 }
