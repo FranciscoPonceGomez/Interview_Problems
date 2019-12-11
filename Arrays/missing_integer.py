@@ -7,14 +7,26 @@ For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should g
 You can modify the input array in-place.
 
 
-def missing_integer(arr):
-    arr.sort()
-    idx = 0
-    while idx < len(arr)-1:
-        if arr[idx+1] >= 0 and arr[idx] >= 0 and arr[idx+1] - arr[idx] > 1:
-            return arr[idx] + 1
-        idx += 1
-    return arr[idx] + 1
+def first_missing_positive(nums):
+    if not nums:
+        return 1
+    for i, num in enumerate(nums):
+        while i + 1 != nums[i] and 0 < nums[i] <= len(nums):
+            v = nums[i]
+            nums[i], nums[v - 1] = nums[v - 1], nums[i]
+            if nums[i] == nums[v - 1]:
+                break
+    for i, num in enumerate(nums, 1):
+        if num != i:
+            return i
+    return len(nums) + 1
+
+def first_missing_positive_using_set(nums):
+    s = set(nums)
+    i = 1
+    while i in s:
+        i += 1
+    return i
 
 arr = [3, 4, -1, 1]
 arr2 = [1, 2, 0]
