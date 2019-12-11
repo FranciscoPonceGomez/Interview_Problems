@@ -1,0 +1,31 @@
+#This problem was asked by Google.
+
+#You are given given a list of rectangles represented by min and max x- and y-coordinates. Compute whether or not a pair of rectangles overlap each other. If one rectangle completely covers another, it is considered overlapping.
+
+#For example, given the following rectangles:
+
+#{
+#    "top_left": (1, 4),
+#    "dimensions": (3, 3) # width, height
+#},
+#{
+#    "top_left": (-1, 3),
+#    "dimensions": (2, 1)
+#},
+#{
+#    "top_left": (0, 5),
+#    "dimensions": (4, 3)
+#}
+
+#return true as the first and third rectangle overlap each other.
+
+def overlapping(rectangles):
+    x_values = []
+    y_values = []
+    for rect in rectangles:
+        x_values.append(range(rect.get('top_left')[0], rect.get('dimensions')[0]))
+        y_values.append(range(rect.get('top_left')[1], rect.get('dimensions')[1]))
+    # if both x range of numbers and y range of numbers are common they overlap
+    total_x, total_y = set(), set()
+    for x in x_values:
+        total_x = set(x) - total_x
