@@ -13,7 +13,7 @@ def spiral_right(matrix):
 # rotate clockwise
 def spiral_left(matrix):
     if matrix:
-        return list(matrix[0][::-1]) + spiral_right(list(zip(*matrix[1:]))) 
+        return list(matrix[0][::-1]) + spiral_left(list(zip(*matrix[1:][::-1]))) 
     else:
         return []
 
