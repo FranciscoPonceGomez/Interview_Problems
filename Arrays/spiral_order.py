@@ -1,5 +1,5 @@
-# rotating a matrix is equivalent to transpose a matrix (zip(*matrix))
-# and the invert colums (to rotate right) or rows (to rotate left)
+# rotating a matrix is equivalent to transposing a matrix (zip(*matrix))
+# and inverting colums (to rotate right) or rows (to rotate left).
 
 # separate top row
 # rotate counter-clockwise
